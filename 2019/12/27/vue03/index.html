@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue03 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="组件概念​    组件其实就是一堆可服用的标签实例, 且带有一个名字, 而且组件分为全局组件和本地组件 ​    每个组件都有自己的作用域, 都是一个独立存在的个体 分类全局组件1234567891011&lt;child-com&gt;&lt;&#x2F;child-com&gt;&#x2F;&#x2F; buy-item代表组件名(自己定义)&#x2F;&#x2F; 对象代表组件的配置项Vue.component(&quot;child-com&quot;, &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue03">
+<meta property="og:url" content="http://yoursite.com/2019/12/27/vue03/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="组件概念​    组件其实就是一堆可服用的标签实例, 且带有一个名字, 而且组件分为全局组件和本地组件 ​    每个组件都有自己的作用域, 都是一个独立存在的个体 分类全局组件1234567891011&lt;child-com&gt;&lt;&#x2F;child-com&gt;&#x2F;&#x2F; buy-item代表组件名(自己定义)&#x2F;&#x2F; 对象代表组件的配置项Vue.component(&quot;child-com&quot;, &amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-26T18:56:31.647Z">
+<meta property="article:modified_time" content="2019-10-17T01:47:28.155Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/27/vue03/" class="article-date">
+  <time datetime="2019-12-26T18:56:31.647Z" itemprop="datePublished">2019-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue03
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>​    组件其实就是一堆可服用的标签实例, 且带有一个名字, 而且组件分为全局组件和本地组件</p>
+<p>​    每个组件都有自己的作用域, 都是一个独立存在的个体</p>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><h5 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;child-com&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child-com</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// buy-item代表组件名(自己定义)</span></span><br><span class="line"><span class="comment">// 对象代表组件的配置项</span></span><br><span class="line">Vue.component(<span class="string">"child-com"</span>, &#123;</span><br><span class="line">    <span class="comment">// 组件内的data, 必须是一个函数返回对象的结构</span></span><br><span class="line">    data () &#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 组件包含的标签 (只能有一个根标签)</span></span><br><span class="line">    template: <span class="string">``</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意, 这里的child-com即是组件名(自定义标签名) , 不要跟现有的标签重名</p>
+</blockquote>
+<blockquote>
+<p>注意, 全局组件, 可以应用在任意一个角落</p>
+</blockquote>
+<h5 id="本地组件"><a href="#本地组件" class="headerlink" title="本地组件"></a>本地组件</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 3. 使用组件</span></span><br><span class="line">&lt;child-com&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child-com</span>&gt;</span></span></span><br><span class="line">&lt;div is=<span class="string">"childCom"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 定义组件</span></span><br><span class="line"><span class="keyword">let</span> childCom = &#123;</span><br><span class="line">	template: <span class="string">`</span></span><br><span class="line"><span class="string">    	&lt;div&gt;局部组件&#123;&#123;num&#125;&#125;&lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            num: <span class="number">10</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 注册组件</span></span><br><span class="line">components: &#123;</span><br><span class="line">	childCom</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意: 只在当前vue实例/当前.vue文件中可以使用 / 需要引入后使用</p>
+</blockquote>
+<h4 id="组件内用方法"><a href="#组件内用方法" class="headerlink" title="组件内用方法"></a>组件内用方法</h4><blockquote>
+<p>注意组件内的方法只能在当前方法中使用</p>
+</blockquote>
+<h4 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h4><h5 id="父-gt-子"><a href="#父-gt-子" class="headerlink" title="父-&gt;子"></a>父-&gt;子</h5><p>在使用组件的时候, 向组件内的props变量, 传递数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;buy-item :u-name=<span class="string">"userName"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">buy-item</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>在自定义组件中, 声明props属性, 用户接受外部给我传递的数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">    uName: <span class="built_in">String</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在组件标签上, 使用接收到的数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">template: <span class="string">`&lt;p&gt;&#123;&#123;uName&#125;&#125;&lt;/p&gt;`</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="组件内-自定义事件"><a href="#组件内-自定义事件" class="headerlink" title="组件内_自定义事件"></a>组件内_自定义事件</h5><p>系统的事件:</p>
+<ul>
+<li>@click</li>
+<li>@mouseout</li>
+<li>@mouseover</li>
+<li>@keyup</li>
+<li>@keydown</li>
+<li>@input</li>
+<li>@change</li>
+<li>…. 以上都是系统的事件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-item @ldx-click=<span class="string">"myClickFn"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">my-item</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ldxclick: 是自己起的自定义事件名</li>
+<li>myClickFn: 当ldxclick事件, 被触发时, 要执行的方法</li>
+</ul>
+<h5 id="子-gt-父"><a href="#子-gt-父" class="headerlink" title="子-&gt;父"></a>子-&gt;父</h5><p>在自定义事件的基础上, 在组件内触发并且传值出去</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$emit(<span class="string">"ldx-click"</span>, ++<span class="keyword">this</span>.num);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意:  组件内一般只负责数据的展示, 所有的业务逻辑最好都传回给页面去做</p>
+</blockquote>
+<h4 id="props验证"><a href="#props验证" class="headerlink" title="props验证"></a>props验证</h4><p>有时我们封装自己的组件库时, 想要告诉使用你组件的人, 传入参数必须是xxx类型等约束, 所以使用props验证规则</p>
+<ul>
+<li>null 任意类型</li>
+<li>String  字符串类型</li>
+<li>[String, Number]   字符串/数值类型</li>
+<li>{  type: String,  required: true }  必须传, 而且是字符串类型</li>
+<li>{ type: Number, default: 100}  数值类型, 如果不传, 则使用默认值100</li>
+<li>{type: Array, default () {return []} }  数组类型, 如果不传, 则使用默认值 []</li>
+<li>validator: function (value) { return value &gt; 10 } 自定义验证规则 (返回true则通过验证规则)</li>
+</ul>
+<blockquote>
+<p>props: 变量 对应的是  类型, 同时使用default字段, 来给默认值</p>
+<p>data: 变量 对应的是  默认值(初始值)</p>
+</blockquote>
+<blockquote>
+<p>注意: 引用数据类型Object/Array, 默认值必须使用函数返回</p>
+</blockquote>
+<blockquote>
+<p>注意: 如果外面没有给props里变量传值, 则变量使用默认的值</p>
+</blockquote>
+<h4 id="特殊用法"><a href="#特殊用法" class="headerlink" title="特殊用法"></a>特殊用法</h4><ul>
+<li>table&gt;tr中不能直接使用组件, 需要在tr的is属性指定组件名</li>
+<li>select&gt; 也不能封装options组件, 需要在option的is属性指定组件名</li>
+</ul>
+<h4 id="使用组件方式"><a href="#使用组件方式" class="headerlink" title="使用组件方式"></a>使用组件方式</h4><ul>
+<li>&lt;组件名&gt;&lt;/组件名&gt;</li>
+<li><component is="组件名"></component></li>
+</ul>
+<h4 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h4><p><component :is="变量"></component></p>
+<p>把组件的名字, 使用Vuejs变量带代表, 修改变量为各个组件名字, 即可实现组件的切换</p>
+<h4 id="组件的插槽"><a href="#组件的插槽" class="headerlink" title="组件的插槽"></a>组件的插槽</h4><p>当相似的组件, 某1-2个标签不同时, 我们可以留一个slot标签, 让外部传入标签到组件中</p>
+<h3 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h3><ul>
+<li>父-&gt;子: 传值用props</li>
+<li>子-&gt;父: 用自定义事件, 带值</li>
+<li>组件之间类似, 只差1-2个标签, 用插槽</li>
+<li>组件之间相差很大, 而且要根据数据来切换不同组件使用, 则用动态组件</li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>components里key值/全局组件第一个参数, 就是在html中使用的组件标签名字(注意html中使用时要换成-连接)</li>
+<li>组件内不要写网络请求/太多的逻辑代码, 组件只负责数据展示, 逻辑参数传回页面处理</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/27/vue03/" data-id="ck4n3agzs0003uov2hhks4bt5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/27/vue04/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue04
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/27/vue01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue01</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/27/vue07vuex%E4%BD%BF%E7%94%A8/">vue07vuex使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue06/">vue06</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue05/">vue05</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue04/">vue04</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue03/">vue03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

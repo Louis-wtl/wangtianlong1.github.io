@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue04 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Vue生命周期介绍图解: https:&#x2F;&#x2F;cn.vuejs.org&#x2F;images&#x2F;lifecycle.png Vue的生命周期方法, 又叫做生命周期钩子函数,   钩子函数: C#语言里的叫法, 它其实就是构造函数(constructor), 对象出生时触发, 对应的叫: 析构函数 (对象释放前触发)  钩子函数beforeCreate​        Vue实例化之后, 数据和事件加载之前调用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue04">
+<meta property="og:url" content="http://yoursite.com/2019/12/27/vue04/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue生命周期介绍图解: https:&#x2F;&#x2F;cn.vuejs.org&#x2F;images&#x2F;lifecycle.png Vue的生命周期方法, 又叫做生命周期钩子函数,   钩子函数: C#语言里的叫法, 它其实就是构造函数(constructor), 对象出生时触发, 对应的叫: 析构函数 (对象释放前触发)  钩子函数beforeCreate​        Vue实例化之后, 数据和事件加载之前调用">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-26T18:56:31.657Z">
+<meta property="article:modified_time" content="2019-10-18T00:31:53.474Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/27/vue04/" class="article-date">
+  <time datetime="2019-12-26T18:56:31.657Z" itemprop="datePublished">2019-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue04
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>图解: <a href="https://cn.vuejs.org/images/lifecycle.png" target="_blank" rel="noopener">https://cn.vuejs.org/images/lifecycle.png</a></p>
+<p>Vue的生命周期方法, 又叫做生命周期钩子函数, </p>
+<blockquote>
+<p>钩子函数: C#语言里的叫法, 它其实就是构造函数(constructor), 对象出生时触发, 对应的叫: 析构函数 (对象释放前触发)</p>
+</blockquote>
+<h4 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h4><h5 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h5><p>​        Vue实例化之后, 数据和事件加载之前调用</p>
+<h5 id="created"><a href="#created" class="headerlink" title="created"></a>created</h5><p>​        数据观察和事件以及属性, 初始化完毕, 但是页面上还没有挂载任何标签节点, 一般网络请求写在这里</p>
+<h5 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h5><p>​        判断el选项, 如果有, 则再判断有无template选项, 如果没有template选项, 则认为el中的标签节点为它的模板标签, 然后在挂载DOM之前触发此方法</p>
+<h5 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h5><p>​        真正的el标签内被虚拟DOM已经替换掉, 已经挂载</p>
+<blockquote>
+<p>注意: mounted不能保证所有的子组件都已经被挂载成功才触发, 如果想要确保所有组件都被挂载需要使用this.$nextTick(回调函数)</p>
+</blockquote>
+<h5 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h5><p>​        数据更新时调用, 但是在DOM页面更新前触发</p>
+<h5 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h5><p>​        页面上的DOM已经更新完毕</p>
+<h5 id="activated"><a href="#activated" class="headerlink" title="activated"></a>activated</h5><p>​        keep-alive属性的组件激活时调用。</p>
+<h5 id="deactivated"><a href="#deactivated" class="headerlink" title="deactivated"></a>deactivated</h5><p>​        keep-alive属性组件被停用时触发</p>
+<h5 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h5><p>​        实例在销毁之前调用</p>
+<h5 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h5><p>​        实例销毁后调用</p>
+<blockquote>
+<p>Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁</p>
+</blockquote>
+<h5 id="errorCaptured"><a href="#errorCaptured" class="headerlink" title="errorCaptured"></a>errorCaptured</h5><p>​        捕获子组件的错误信息</p>
+<blockquote>
+<p>注意只有在vuejs2.5+版本后才可以使用这个方法</p>
+</blockquote>
+<h3 id="v-for的高级用法"><a href="#v-for的高级用法" class="headerlink" title="v-for的高级用法"></a>v-for的高级用法</h3><h4 id="循环对象"><a href="#循环对象" class="headerlink" title="循环对象"></a>循环对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--        item 代表的是 每对键值对中的, 值--&gt;</span><br><span class="line">&lt;!--        key 代表的是, 每对键值对中的, 键--&gt;</span><br><span class="line">&lt;!--        index 代表的是, 每个键值对中的, 索引--&gt;</span><br><span class="line">    </span><br><span class="line">v-<span class="keyword">for</span>=<span class="string">"(value, key, index) in object"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="循环数字"><a href="#循环数字" class="headerlink" title="循环数字"></a>循环数字</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--    item 从<span class="number">1</span> 开始, index 索引 从<span class="number">0</span>开始 --&gt;</span><br><span class="line">v-<span class="keyword">for</span>=<span class="string">"(n,index) in 10"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="嵌套循环"><a href="#嵌套循环" class="headerlink" title="嵌套循环"></a>嵌套循环</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;li v-<span class="keyword">for</span>=<span class="string">"(obj, index) in arr"</span> :key=<span class="string">"index"</span>&gt;</span><br><span class="line">	&lt;p&gt;&#123;&#123;obj[<span class="string">'name'</span>]&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">	&lt;span v-for="(item, ind) in obj['grade']"&gt;&#123;&#123;item&#125;&#125;&lt;/</span>span&gt;</span><br><span class="line">&lt;<span class="regexp">/li&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="更新检测"><a href="#更新检测" class="headerlink" title="更新检测"></a>更新检测</h3><p>Vue是响应式数据绑定, 只有当<strong>数据发生变化</strong>并且被<strong>检测</strong>到的时候, 才会触发页面的更新</p>
+<h4 id="数组检测"><a href="#数组检测" class="headerlink" title="数组检测"></a>数组检测</h4><p>例如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="keyword">this</span>.arr[<span class="number">0</span>] = <span class="number">10</span>; <span class="comment">// 虽然arr被修改了, 但是它是非变异方式, 所以页面无法自动更新</span></span><br></pre></td></tr></table></figure>
+
+<p>解决方式:</p>
+<ul>
+<li><p>让arr的值重新被覆盖, 可以触发变异方式, 更新页面</p>
+<p>…叫做扩展运算符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myArr = [...this.arr];</span><br><span class="line">myArr[<span class="number">0</span>] = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">this</span>.arr = myArr;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Vue.set()方法即可触发数组更新  参数: 数组对象, 索引, 要赋予的值</p>
+</li>
+</ul>
+<h5 id="可触发"><a href="#可触发" class="headerlink" title="可触发"></a>可触发</h5><ul>
+<li>reverse() </li>
+<li>pop() </li>
+<li>push() </li>
+<li>shift() </li>
+<li>unshift() </li>
+<li>splice()</li>
+</ul>
+<blockquote>
+<p>像这类方法可以直接改变原始数组的, 就会触发变异方式, 更新页面</p>
+</blockquote>
+<h5 id="不可触发"><a href="#不可触发" class="headerlink" title="不可触发"></a>不可触发</h5><ul>
+<li>concat()  连接多个数组, 返回一个全新的数组</li>
+<li>filter()  检测数值元素，并返回符合条件所有元素的数组。 (参数是一个回调函数, 当函数返回值是true, 则保留当前元素)</li>
+<li>forEach()  数组每个元素都执行一次回调函数</li>
+<li>map() 通过指定函数处理数组的每个元素，并返回处理后的数组。</li>
+<li>slice() 截取并返回一个新数组</li>
+</ul>
+<blockquote>
+<p>Vue对数组的方法分为 变异方法(可触发) / 非变异方法(不可触发), 只有在使用变异方法时, 页面上的数组才会被重新加载</p>
+</blockquote>
+<blockquote>
+<p>注意: 需要把接收到的全新的数组, 覆盖给页面使用的数组变量, 才可以触发更新</p>
+</blockquote>
+<h4 id="对象检测"><a href="#对象检测" class="headerlink" title="对象检测"></a>对象检测</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.obj[<span class="string">'address'</span>] = <span class="string">"地球上"</span>; <span class="comment">// 这种方式无法触发变异方式</span></span><br></pre></td></tr></table></figure>
+
+<p>解决方式:</p>
+<ul>
+<li><p>深拷贝, 并且覆盖原有对象, 使页面更新</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;...this.obj&#125;;</span><br><span class="line">obj[<span class="string">'address'</span>] = <span class="string">"地球上"</span>;</span><br><span class="line"><span class="keyword">this</span>.obj = obj;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Vue.set()  参数: 对象, 键名, 要赋予的值, 但是注意他不能和上面那行共存</p>
+</li>
+</ul>
+<h3 id="动画使用"><a href="#动画使用" class="headerlink" title="动画使用"></a>动画使用</h3><p>文档: <a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/transitions.html</a></p>
+<p>transition组件, 是vue官方的内置组件, 集成了进入/离开过渡动画</p>
+<p>原理: 在运行期间, 动态给标签设置class类名, 但是具体的过渡效果的样式需要我们自己写</p>
+<p>触发的条件:</p>
+<ul>
+<li>条件渲染 (使用 v-if)</li>
+<li>条件展示 (使用 v-show)</li>
+<li>动态组件</li>
+<li>组件根节点 </li>
+</ul>
+<p>使用方式:</p>
+<ol>
+<li>利用transition标签, 夹住要做过渡动画的标签</li>
+<li><transition name="fade">  指定name名字 (不指定就使用默认name为v), 注意应用于自动生成class类名的前缀上.</li>
+<li>对transition内的根标签, 设置条件渲染/展示渲染/动态组件/代码</li>
+<li>根据业务逻辑来切换标签的出现/隐藏,  让transition动态添加/移除class类名</li>
+<li>对class类名, 设置具体的样式(例如透明度/颜色/其他样式)</li>
+</ol>
+<p>过渡类名:</p>
+<p>在执行出现/隐藏时, 分别会添加3个class类名, 前三个隐藏-&gt;出现   后三个出现-&gt;隐藏</p>
+<ul>
+<li>v-enter: 定义进入过渡的开始状态。 (开始)</li>
+<li><code>v-enter-active</code>：定义进入过渡生效时的状态。这个类可以被用来定义进入过渡的过程时间 (过程)</li>
+<li><code>v-enter-to</code>: <strong>2.1.8+</strong> 定义进入过渡的结束状态。 (结束定型)</li>
+<li><code>v-leave</code>: 定义离开过渡的开始状态。</li>
+<li><code>v-leave-active</code>：定义离开过渡生效时的状态。</li>
+<li><code>v-leave-to</code>: <strong>2.1.8+</strong> 定义离开过渡的结束状态。</li>
+</ul>
+<blockquote>
+<p>注意: 以上自动添加的class类名, 会在动画结束之后, 全部移除掉</p>
+</blockquote>
+<p>例如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*enter -&gt; enter to   leave -&gt; leave-to*/</span></span><br><span class="line">        .fade-enter, .fade-leave-to &#123;</span><br><span class="line">            opacity: <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .fade-enter-to, .fade-leave &#123;</span><br><span class="line">            opacity: <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .fade-enter-active, .fade-leave-active &#123;</span><br><span class="line">            transition: all <span class="number">0.3</span>s;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意: 多个标签, 同时做进入和出去的动画, 会有问题</p>
+</blockquote>
+<blockquote>
+<p>注意: transition 组件内, 只能有一个根标签, 如果有多个根标签, 则用transition-group(需要给每个标签指定一个key属性</p>
+</blockquote>
+<blockquote>
+<p>如果不用transition-group, 可以使用动态组件</p>
+</blockquote>
+<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><h4 id="学过的指令"><a href="#学过的指令" class="headerlink" title="学过的指令"></a>学过的指令</h4><ul>
+<li>v-bind</li>
+<li>v-on</li>
+<li>v-for</li>
+<li>v-if</li>
+<li>v-else</li>
+<li>v-show</li>
+<li>v-model</li>
+<li>v-once</li>
+</ul>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><h5 id="全局指令"><a href="#全局指令" class="headerlink" title="全局指令"></a>全局指令</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue.directive(<span class="string">'change'</span>, &#123;</span><br><span class="line">        <span class="comment">// 当被绑定的元素插入到 DOM 中时……</span></span><br><span class="line">        bind: <span class="function"><span class="keyword">function</span>(<span class="params">el, binding</span>) </span>&#123;</span><br><span class="line">            el.innerHTML = binding.value;</span><br><span class="line">        &#125;,</span><br><span class="line">        update: <span class="function"><span class="keyword">function</span> (<span class="params">el, binding</span>) </span>&#123;</span><br><span class="line">            el.innerHTML = binding.value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="本地指令"><a href="#本地指令" class="headerlink" title="本地指令"></a>本地指令</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本地指令</span></span><br><span class="line">directives: &#123;</span><br><span class="line">    change: &#123;</span><br><span class="line">        bind: <span class="function"><span class="keyword">function</span>(<span class="params">el, binding</span>) </span>&#123;</span><br><span class="line">            el.innerHTML = binding.value;</span><br><span class="line">        &#125;,</span><br><span class="line">        update: <span class="function"><span class="keyword">function</span> (<span class="params">el, binding</span>) </span>&#123;</span><br><span class="line">            el.innerHTML = binding.value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="指令-钩子函数"><a href="#指令-钩子函数" class="headerlink" title="指令_钩子函数"></a>指令_钩子函数</h4><p>每个指令都有以下方法</p>
+<ul>
+<li>bind: 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</li>
+<li>inserted: 被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</li>
+<li>update：所在指令的标签更新时调用(多次), 指令的值可能发生了改变，也可能没有。但是你可以通过比较更新前后的值来忽略不必要的指令更新 (详细的钩子函数参数见下)。</li>
+</ul>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><ul>
+<li>.lazy    只有在input输入框发生blur时才触发 (把value的值绑定到vue变量上)</li>
+<li>.trim   将用户输入的前后的空格去掉, 再绑定给Vue的变量</li>
+<li>.number 将用户输入的字符串转换成number, 再绑定给Vuejs的变量</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/27/vue04/" data-id="ck4n3agzr0002uov223rvf980" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/27/vue05/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue05
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/27/vue03/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue03</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/27/vue07vuex%E4%BD%BF%E7%94%A8/">vue07vuex使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue06/">vue06</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue05/">vue05</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue04/">vue04</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue03/">vue03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

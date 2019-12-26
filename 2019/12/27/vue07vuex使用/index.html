@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue07vuex使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Vue传参A页面-&gt;B页面页面和页面之间传参, A 跳转 B, 可以使用  router-link  在路由配置里, 配置好&#x2F;:变量, 会对应解析路径中的值   $router.push  path+query name+params     案例1: 在User页面向Pass页面传值, 再从Pass页面向Age页面传值, 再把值一起传给Confirm页面  A页面  &lt;- B页面使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue07vuex使用">
+<meta property="og:url" content="http://yoursite.com/2019/12/27/vue07vuex%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue传参A页面-&gt;B页面页面和页面之间传参, A 跳转 B, 可以使用  router-link  在路由配置里, 配置好&#x2F;:变量, 会对应解析路径中的值   $router.push  path+query name+params     案例1: 在User页面向Pass页面传值, 再从Pass页面向Age页面传值, 再把值一起传给Confirm页面  A页面  &lt;- B页面使用">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-26T18:56:31.677Z">
+<meta property="article:modified_time" content="2019-10-22T10:55:27.311Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue07vuex使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/27/vue07vuex%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2019-12-26T18:56:31.677Z" itemprop="datePublished">2019-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue07vuex使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Vue传参"><a href="#Vue传参" class="headerlink" title="Vue传参"></a>Vue传参</h3><h4 id="A页面-gt-B页面"><a href="#A页面-gt-B页面" class="headerlink" title="A页面-&gt;B页面"></a>A页面-&gt;B页面</h4><p>页面和页面之间传参, A 跳转 B, 可以使用</p>
+<ul>
+<li><p>router-link</p>
+<ul>
+<li>在路由配置里, 配置好/:变量, 会对应解析路径中的值</li>
+</ul>
+</li>
+<li><p>$router.push</p>
+<ul>
+<li>path+query</li>
+<li>name+params</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>案例1: 在User页面向Pass页面传值, 再从Pass页面向Age页面传值, 再把值一起传给Confirm页面</p>
+</blockquote>
+<h4 id="A页面-lt-B页面"><a href="#A页面-lt-B页面" class="headerlink" title="A页面  &lt;- B页面"></a>A页面  &lt;- B页面</h4><p>使用history.back() 来用浏览器的机制返回上一页, 可以使用</p>
+<ul>
+<li>cookie</li>
+<li>localStorage</li>
+<li>sessionStorage</li>
+</ul>
+<h4 id="页面-gt-组件"><a href="#页面-gt-组件" class="headerlink" title="页面 -&gt; 组件"></a>页面 -&gt; 组件</h4><ul>
+<li>props属性</li>
+</ul>
+<h4 id="页面-lt-组件"><a href="#页面-lt-组件" class="headerlink" title="页面 &lt;- 组件"></a>页面 &lt;- 组件</h4><ul>
+<li>自定义事件, 然后this.$emit(事件名)</li>
+</ul>
+<h4 id="组件-和-组件"><a href="#组件-和-组件" class="headerlink" title="组件  和  组件"></a>组件  和  组件</h4><p>如果组件A 和 组件B 之间没有import 引用的关系, 而是在页面中 同时引入组件A 和 组件B</p>
+<blockquote>
+<p>案例2: 颜色组件, 讲解页面-&gt;组件传值 (颜色文字和颜色英文), 点击颜色, 修改同级组件中标签颜色</p>
+</blockquote>
+<h3 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h3><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>使用一个独立全新的Vue对象, 无需根节点, 这个Vue对象, 只是负责整个项目的事件管理</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ol>
+<li><p>新建src/EventBus.js</p>
+</li>
+<li><p>新建全新的Vue对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line">   <span class="comment">// 导出一个空白的Vue对象, 这个Vue对象无需根节点, 它只负责组件之间的通信</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vue()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接收的位置注册Bus事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bus.$on(<span class="string">"事件名"</span>, 方法体);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>触发传值的位置 触发对应的事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bus.$emit(<span class="string">"事件名"</span>, 传递的参数对象)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>注意: 可以有多个注册/触发的地方, 而且事件可以有多个不同的, 注意对应好</p>
+</blockquote>
+<ol start="5">
+<li><p>(释放) 在组件废弃, 放弃事件监听</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Bus.$off('事件名'); // 移除所有事件名绑定的地方</span></span><br><span class="line"><span class="comment">// Bus.$off('事件名', 方法体); // 移除当前事件绑定的地方</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>重点注意: 一定要让$on的代码先执行, 再执行$emit才可以触发事件</p>
+</blockquote>
+<h4 id="适用"><a href="#适用" class="headerlink" title="适用"></a>适用</h4><p>适用于项目不是特别大的情况下,  如果组件过多, 而且事件也过多, 则不利于维护和调试以及扩展</p>
+<p>为什么使用Vuex: 因为当项目特别大的时候, 页面和组件过多, 那么你需要维护的自定义事件的名字也会特别多, 而且发送事件和接收事件的地方需要你记住进行维护, 会异常麻烦, 所以我们要把这些状态值提取到一个统一的地方, 那么由vuex模块, 来帮助我们进行维护</p>
+<h3 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h3><h4 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h4><p>​    Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化</p>
+<blockquote>
+<p>案例3: 实现商品浏览+购买功能, 以及购物车展示功能</p>
+</blockquote>
+<h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><ol>
+<li>在当前工程下载Vuex模块 $ npm install vuex –save</li>
+<li>新建src/store/index.js, 引入Vuex模块,</li>
+<li>确保Vue.use(Vuex) 让Vue集成Vuex的功能</li>
+<li>然后实例化Vuex的Store仓库对象new Vuex.Store({}), 并向外暴露这个Store对象</li>
+<li>在main.js入口中, 引入store文件, 注入到Vue实例中</li>
+</ol>
+<blockquote>
+<p>到此, 我们vuex就已经成功集成到了Vue项目中</p>
+</blockquote>
+<h4 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h4><h5 id="state-全局变量"><a href="#state-全局变量" class="headerlink" title="state(全局变量)"></a>state(全局变量)</h5><p>​    好比data, 定义变量的地方</p>
+<p>​    Vuex 使用<strong>单一状态树</strong>，用一个对象就包含了全部的应用层级状态。至此它便作为一个“唯一数据源而存在。这也意味着，每个应用将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。</p>
+<p>实例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">    shopCarArr: [1, 2, 3, 4] &#x2F;&#x2F; 用于装载购物车里的数据</span><br><span class="line">  &#125;</span><br><span class="line">访问: this.$store.state.shopCarArr</span><br></pre></td></tr></table></figure>
+
+<h5 id="mutations-数据管家"><a href="#mutations-数据管家" class="headerlink" title="mutations(数据管家)"></a>mutations(数据管家)</h5><p>​    更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数</p>
+<blockquote>
+<p>注意: 在严格模式下, 不能直接让vue组件修改state里的属性值, 必须触发mutations里的方法, 来修改state里的属性值</p>
+<p>注意: 这里的方法, 建议由actions来触发(异步), 如果只是单一的触发(同步)可以直接利用store.commit()来提交要变更的数据</p>
+</blockquote>
+<p>参数: state, commitObj</p>
+<h5 id="actions-异步操作"><a href="#actions-异步操作" class="headerlink" title="actions (异步操作)"></a>actions (异步操作)</h5><p>可以进行网络请求和一切的异步操作</p>
+<ul>
+<li>Actions 提交的是 mutation，而不是直接变更state全局变量的值。</li>
+<li>Actions 可以包含任意异步操作。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 第一个参数是 store对象</span><br><span class="line">&#x2F;&#x2F; 第二个参数是 dispatch 传递过来的值</span><br></pre></td></tr></table></figure>
+
+<h5 id="getters-计算属性"><a href="#getters-计算属性" class="headerlink" title="getters(计算属性)"></a>getters(计算属性)</h5><p>​    Vuex 允许我们在 store 中定义“getters”（可以认为是 store 的计算属性）。就像计算属性computed一样，getters 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。</p>
+<p>参数: 有个state</p>
+<h5 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h5><p>​    由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。</p>
+<p>为了解决以上问题，Vuex 允许我们将 store 分割成<strong>模块（module）</strong>。每个模块拥有自己的 state、mutations、actions、getters、甚至是嵌套子模块——从上至下进行同样方式的分割：</p>
+<blockquote>
+<p>注意: </p>
+<ol>
+<li>modules 只是影响state里取值的方式</li>
+<li>state.goodsModule.xxx属性</li>
+<li>而actions和mutations以及getter正常访问即可</li>
+</ol>
+</blockquote>
+<p>例如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    shopModule,</span><br><span class="line">    userModule</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用速查"><a href="#使用速查" class="headerlink" title="使用速查"></a>使用速查</h4><table>
+<thead>
+<tr>
+<th>vuex核心</th>
+<th>触发方式</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mutations</td>
+<td>$store.commit(事件名, 传参)</td>
+<td></td>
+</tr>
+<tr>
+<td>actions</td>
+<td>$store.dispatch(actions名字, 传参)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/27/vue07vuex%E4%BD%BF%E7%94%A8/" data-id="ck4n3agzv0004uov2elbu99bq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/27/vue06/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue06</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/27/vue07vuex%E4%BD%BF%E7%94%A8/">vue07vuex使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue06/">vue06</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue05/">vue05</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue04/">vue04</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue03/">vue03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

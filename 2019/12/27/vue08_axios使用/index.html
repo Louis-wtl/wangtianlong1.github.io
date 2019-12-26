@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>vue08_axios使用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="路由守卫某个路由监听 beforeEnter() 的使用,  某一个 123456789101112&amp;#123;      path: &quot;&#x2F;home&quot;,      name: &quot;Home&quot;,      component: Home,      &#x2F;&#x2F; 当路由访问&#x2F;home时, 跳转路由之前, 触发此方法      beforeEnter(to, from, next) &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue08_axios使用">
+<meta property="og:url" content="http://yoursite.com/2019/12/27/vue08_axios%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="路由守卫某个路由监听 beforeEnter() 的使用,  某一个 123456789101112&amp;#123;      path: &quot;&#x2F;home&quot;,      name: &quot;Home&quot;,      component: Home,      &#x2F;&#x2F; 当路由访问&#x2F;home时, 跳转路由之前, 触发此方法      beforeEnter(to, from, next) &amp;#123;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-26T18:56:31.357Z">
+<meta property="article:modified_time" content="2019-10-24T08:06:12.586Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue08_axios使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/27/vue08_axios%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2019-12-26T18:56:31.357Z" itemprop="datePublished">2019-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue08_axios使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="路由守卫"><a href="#路由守卫" class="headerlink" title="路由守卫"></a>路由守卫</h2><h3 id="某个路由监听"><a href="#某个路由监听" class="headerlink" title="某个路由监听"></a>某个路由监听</h3><ul>
+<li><p>beforeEnter() 的使用,  某一个</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">      path: <span class="string">"/home"</span>,</span><br><span class="line">      name: <span class="string">"Home"</span>,</span><br><span class="line">      component: Home,</span><br><span class="line">      <span class="comment">// 当路由访问/home时, 跳转路由之前, 触发此方法</span></span><br><span class="line">      beforeEnter(to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">        <span class="comment">// to: 要跳转的路由的信息</span></span><br><span class="line">        <span class="comment">// from: 从哪个路由跳过来的信息</span></span><br><span class="line">        <span class="comment">// next: 是否继续执行下一个中间件(需要手动调用, 才会让路由跳转)</span></span><br><span class="line">        next();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="全局路由监听"><a href="#全局路由监听" class="headerlink" title="全局路由监听"></a>全局路由监听</h3><ul>
+<li><p>beforeEach()的使用, 全局路由监听使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局路由监听(导航/路由守卫)</span></span><br><span class="line"><span class="comment">// 每当路由改变时, 就会触发此方法</span></span><br><span class="line"><span class="comment">// 重定向时, 如果to和from相同时, 不会触发beforeEach</span></span><br><span class="line">theRouter.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 1. 用户登录的状态(后台/localStorage/Cookie/SessionStorage)</span></span><br><span class="line">  <span class="keyword">if</span> (localStorage[<span class="string">'userStatus'</span>] || to.path === <span class="string">"/login"</span>) &#123;</span><br><span class="line">    <span class="comment">// 已登录</span></span><br><span class="line">    <span class="keyword">if</span> (localStorage[<span class="string">'userStatus'</span>] &amp;&amp; to.path === <span class="string">"/login"</span>) &#123;</span><br><span class="line">      <span class="comment">// 已经登录了, 还想去登录页, 直接强制跳转回首页</span></span><br><span class="line">      next(<span class="string">"/home"</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      next();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    next(<span class="string">"/login"</span>); <span class="comment">// 未登录时, 你只能被重定向到登录页</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// next(); // 执行下面的路由代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>axios 是一个基于Promise 用于浏览器和 nodejs 的 网络请求的模块</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li>下载axios模块到工程中, 命令 npm i axios </li>
+</ol>
+<h4 id="热更新服务器配置请求接口"><a href="#热更新服务器配置请求接口" class="headerlink" title="热更新服务器配置请求接口"></a>热更新服务器配置请求接口</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在webpack.dev.conf.js中</span><br><span class="line">devServer对象中, 添加before(server)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="本地数据"><a href="#本地数据" class="headerlink" title="本地数据"></a>本地数据</h5><p>例1:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">"/api/getGoodsList"</span>, (req, res) =&gt; &#123;</span><br><span class="line">        <span class="comment">// 当前端Ajax请求/api/getGoodsList就会触发此函数执行</span></span><br><span class="line">        res.send([<span class="string">"香蕉"</span>, <span class="string">"苹果"</span>, <span class="string">"桃子"</span>, <span class="string">"鸭梨"</span>]);</span><br><span class="line">      &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>例2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const newsObj &#x3D; require(&quot;..&#x2F;data&#x2F;news&quot;) &#x2F;&#x2F; 引入本地json文件数据</span><br><span class="line"> app.get(&quot;&#x2F;api&#x2F;getNews&quot;, (req, res) &#x3D;&gt; &#123;</span><br><span class="line">          res.send(newsObj);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="作为代理服务器"><a href="#作为代理服务器" class="headerlink" title="作为代理服务器,"></a>作为代理服务器,</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 我们自己的前端 -&gt; /api/163news  -&gt; 后端请求网易新闻的接口 -&gt; 拿回数据处理后 -&gt; 返回给自己前端使用</span></span><br><span class="line">app.post(<span class="string">"/api/163news"</span>, (req, res) =&gt; &#123;</span><br><span class="line">  axios.get(<span class="string">"http://c.m.163.com/nc/article/headline/T1348647853363/0-40.html"</span>).then(<span class="function"><span class="params">responseText</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> queryObj = req.body;</span><br><span class="line">    <span class="keyword">let</span> start = queryObj[<span class="string">'start'</span>] * <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> end = queryObj[<span class="string">'end'</span>] * <span class="number">1</span>;</span><br><span class="line">    res.send(responseText[<span class="string">'data'</span>][<span class="string">'T1348647853363'</span>].slice(start, end));</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="代理服务器配置-常用"><a href="#代理服务器配置-常用" class="headerlink" title="代理服务器配置(常用)"></a>代理服务器配置(常用)</h5><p>原理和代理服务器里写, 转发的axios网路请求一样, 只不过, 配置只需要配置一次, 一劳永逸</p>
+<p>配置如下:</p>
+<p>demo2 &gt; config &gt; index.js中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">proxyTable: &#123; <span class="comment">// 用来配置服务器, 代理接口转发规则</span></span><br><span class="line">      <span class="string">'/nc'</span>: &#123;</span><br><span class="line">        target: <span class="string">'http://c.m.163.com'</span>, <span class="comment">// 当服务器收到/nc开头的请求接口时, 会把请求的url由http://localhost:8080/nc/getTitle/xxxxxx变成</span></span><br><span class="line">        <span class="comment">// http://c.m.163.com/nc/getTitle/xxxxxx</span></span><br><span class="line">        changeOrigin: <span class="literal">true</span>,  <span class="comment">// 是否修改域名</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>从浏览器中创建 <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequests</a></li>
+<li>从 node.js 创建 <a href="http://nodejs.org/api/http.html" target="_blank" rel="noopener">http</a> 请求</li>
+<li>支持 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise</a> API</li>
+<li>拦截请求和响应</li>
+<li>转换请求数据和响应数据</li>
+<li>取消请求</li>
+<li>自动转换 JSON 数据</li>
+<li>客户端支持防御 XSRF</li>
+</ul>
+<p>多页面</p>
+<p>// 1. 新建pages/love/love.js + Love.vue + love.html<br>// 2. 在webpack.base.conf.js 基础配置:<br>// love: ‘./src/pages/love/love.js’<br>// 3. 在webpack.dev.conf.js 配置<br>/*</p>
+<ul>
+<li>new HtmlWebpackPlugin({<br>filename: ‘love.html’,<br>template: ‘./src/pages/love/love.html’, // 注意路径<br>inject: true,<br>chunks: [‘manifest’, ‘vendor’, ‘love’]<br>}),</li>
+<li><em>/<br>// 4. wepback.prod.conf.js<br>/</em></li>
+<li>new HtmlWebpackPlugin({<br>filename: ‘love.html’,<br>template: ‘./src/pages/love/love.html’,<br>inject: true,<br>minify: {<br>removeComments: true,<br>collapseWhitespace: true,<br>removeAttributeQuotes: true<br>// more options:<br>// <a href="https://github.com/kangax/html-minifier#options-quick-reference" target="_blank" rel="noopener">https://github.com/kangax/html-minifier#options-quick-reference</a><br>},<br>// necessary to consistently work with multiple chunks via CommonsChunkPlugin<br>chunksSortMode: ‘dependency’,<br>chunks: [‘manifest’,’vendor’,’love’]<br>}),</li>
+<li>*/</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/27/vue08_axios%E4%BD%BF%E7%94%A8/" data-id="ck4n3agzw0005uov21xi4doa1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/27/vue02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue02
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/27/vue07vuex%E4%BD%BF%E7%94%A8/">vue07vuex使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue06/">vue06</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue05/">vue05</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue04/">vue04</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/vue03/">vue03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
