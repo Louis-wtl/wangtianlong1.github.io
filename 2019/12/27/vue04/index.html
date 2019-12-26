@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-
-  
   <title>vue04 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
   <meta name="description" content="Vue生命周期介绍图解: https:&#x2F;&#x2F;cn.vuejs.org&#x2F;images&#x2F;lifecycle.png Vue的生命周期方法, 又叫做生命周期钩子函数,   钩子函数: C#语言里的叫法, 它其实就是构造函数(constructor), 对象出生时触发, 对应的叫: 析构函数 (对象释放前触发)  钩子函数beforeCreate​        Vue实例化之后, 数据和事件加载之前调用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue04">
@@ -21,71 +23,116 @@
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
-  
-    <link rel="icon" href="/favicon.png">
-  
+  <link rel="icon" href="/css/images/favicon.ico">
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
   
 <link rel="stylesheet" href="/css/style.css">
 
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
       </div>
-    </div>
   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-vue04" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/27/vue04/" class="article-date">
-  <time datetime="2019-12-26T18:56:31.657Z" itemprop="datePublished">2019-12-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-vue04" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
+    <h1 class="thumb" class="article-title" itemprop="name">
       vue04
     </h1>
   
 
       </header>
     
+    <div class="article-meta">
+      
+	<a href="/2019/12/27/vue04/" class="article-date">
+	  <time datetime="2019-12-26T18:56:31.657Z" itemprop="datePublished">December 27, 2019</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>图解: <a href="https://cn.vuejs.org/images/lifecycle.png" target="_blank" rel="noopener">https://cn.vuejs.org/images/lifecycle.png</a></p>
@@ -237,11 +284,37 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/27/vue04/" data-id="ck4n3agzr0002uov223rvf980" class="article-share-link">Share</a>
+    <footer class="entry-meta entry-footer">
       
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
       
     </footer>
+    <hr class="entry-footer-hr">
   </div>
   
     
@@ -267,82 +340,103 @@
   
 </article>
 
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue生命周期"><span class="nav-number">1.</span> <span class="nav-text">Vue生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#钩子函数"><span class="nav-number">1.2.</span> <span class="nav-text">钩子函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#beforeCreate"><span class="nav-number">1.2.1.</span> <span class="nav-text">beforeCreate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#created"><span class="nav-number">1.2.2.</span> <span class="nav-text">created</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#beforeMount"><span class="nav-number">1.2.3.</span> <span class="nav-text">beforeMount</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mounted"><span class="nav-number">1.2.4.</span> <span class="nav-text">mounted</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#beforeUpdate"><span class="nav-number">1.2.5.</span> <span class="nav-text">beforeUpdate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#updated"><span class="nav-number">1.2.6.</span> <span class="nav-text">updated</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#activated"><span class="nav-number">1.2.7.</span> <span class="nav-text">activated</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#deactivated"><span class="nav-number">1.2.8.</span> <span class="nav-text">deactivated</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#beforeDestroy"><span class="nav-number">1.2.9.</span> <span class="nav-text">beforeDestroy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#destroyed"><span class="nav-number">1.2.10.</span> <span class="nav-text">destroyed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#errorCaptured"><span class="nav-number">1.2.11.</span> <span class="nav-text">errorCaptured</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for的高级用法"><span class="nav-number">2.</span> <span class="nav-text">v-for的高级用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#循环对象"><span class="nav-number">2.1.</span> <span class="nav-text">循环对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环数字"><span class="nav-number">2.2.</span> <span class="nav-text">循环数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套循环"><span class="nav-number">2.3.</span> <span class="nav-text">嵌套循环</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新检测"><span class="nav-number">3.</span> <span class="nav-text">更新检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组检测"><span class="nav-number">3.1.</span> <span class="nav-text">数组检测</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#可触发"><span class="nav-number">3.1.1.</span> <span class="nav-text">可触发</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不可触发"><span class="nav-number">3.1.2.</span> <span class="nav-text">不可触发</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象检测"><span class="nav-number">3.2.</span> <span class="nav-text">对象检测</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画使用"><span class="nav-number">4.</span> <span class="nav-text">动画使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令"><span class="nav-number">5.</span> <span class="nav-text">自定义指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#学过的指令"><span class="nav-number">5.1.</span> <span class="nav-text">学过的指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类"><span class="nav-number">5.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#全局指令"><span class="nav-number">5.2.1.</span> <span class="nav-text">全局指令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#本地指令"><span class="nav-number">5.2.2.</span> <span class="nav-text">本地指令</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令-钩子函数"><span class="nav-number">5.3.</span> <span class="nav-text">指令_钩子函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰符"><span class="nav-number">6.</span> <span class="nav-text">修饰符</span></a></li></ol>
+    
+    </div>
+  </aside>
 </section>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/12/27/vue07vuex%E4%BD%BF%E7%94%A8/">vue07vuex使用</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/27/vue06/">vue06</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/27/vue05/">vue05</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/27/vue04/">vue04</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/27/vue03/">vue03</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+
     </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+    <!-- <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
-</nav>
-    
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
   
@@ -357,8 +451,35 @@
 <script src="/js/script.js"></script>
 
 
+<script src="/js/bootstrap.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
 
 
   </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
 </body>
 </html>
